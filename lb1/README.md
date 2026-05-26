@@ -1,1 +1,0 @@
-# vmpf-pzpi-23-9-danchenko-denys
