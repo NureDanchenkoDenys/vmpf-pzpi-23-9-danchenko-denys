@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Статті</title>
+    <link rel="stylesheet" href="{% static 'articles/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Список статей</h1>
+
+        {% for article in articles %}
+            <div class="article-card">
+                <h2>{{ article.title }}</h2>
+
+                <p>{{ article.text }}</p>
+
+                <div class="article-actions">
+                    <a class="btn edit-btn" href="{% url 'article_edit' article.id %}">
+                        Редагувати
+                    </a>
+
+                    <a class="btn delete-btn" href="{% url 'article_delete' article.id %}">
+                        Видалити
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
